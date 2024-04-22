@@ -105,9 +105,20 @@ methods for actions.
 How should endpoint look in practice?
 /addNewTour -> POST /tours send data to survey - create new resources. no id, server will work out id for resource
 /getTour -> GET /tours/7 (note tours - plural) 7 would be for tour id GET would be for read method
-/updateTour
+/updateTour -> PUT /tours/7 (client is meant to send entire updated object)
+            -> PATCH /tours/7 -> (patch = only the part of the object that has been changed)
 
-/deleteTour 
+PUT & PATCH = update existing resource. Sending data like POST
 
+/deleteTour -> DELETE /tours/7 
 
-- Send data as JSON (usually) */
+POST, GET, PUT, PATCH, DELETE -> HTTPS methods to allow client to perform four basic CRUD operations
+Create, Read, Update and Delete
+
+/getToursByUser -> GET  /users/3/tours
+/deleteToursByUser -> DELETE    /users/3/tours/9
+
+- Send data as JSON (usually) 
+
+-Be stateless 
+*/
