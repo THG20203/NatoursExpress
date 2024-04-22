@@ -4,20 +4,23 @@ const express = require("express");
 const app = express();
 
 const port = 3000;
-/* to app.listen passing in port created in variable above and a callback 
-function. This callback function will be called as soon as the server starts 
-listening */ 
-app.listen(port, () => {
-console.log(`App running on port ${port}...`)
-});
 
-/* Define routes = next step. First define route url. Callback function after /
+/* Define routes. First define route url. Callback function after /
 this callback needs request and response */
 /* Node is about requests and responses. */
 app.get("/", (req, res) => {
     /* what we want to do is send back data very quickly */
     res.status(200).send("Hello from the server side");
 });
+
+/* to app.listen passing in port created in variable above and a callback 
+function. This callback function will be called as soon as the server starts 
+listening */ 
+/* start listening after all routes are defined */
+app.listen(port, () => {
+   console.log(`App running on port ${port}...`)
+});
+    
 
 ///// CALLBACK FUNCTION DEFINITION 
 /* A callback function is a function passed into another function as an argument,
