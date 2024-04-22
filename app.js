@@ -10,7 +10,8 @@ this callback needs request and response */
 /* Node is about requests and responses. */
 app.get("/", (req, res) => {
     /* what we want to do is send back data very quickly */
-    res.status(200).send("Hello from the server side");
+    /* with json method, we can pass in an object */
+    res.status(200).json({message: "Hello from the server side!", app: "Natours"});
 });
 
 /* to app.listen passing in port created in variable above and a callback 
