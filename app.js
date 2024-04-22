@@ -102,5 +102,12 @@ methods for actions.
 
 - Use HTTP methods (verbs)
 
+How should endpoint look in practice?
+/addNewTour -> POST /tours send data to survey - create new resources. no id, server will work out id for resource
+/getTour -> GET /tours/7 (note tours - plural) 7 would be for tour id GET would be for read method
+/updateTour
+
+/deleteTour 
+
 
 - Send data as JSON (usually) */
