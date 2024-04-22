@@ -60,3 +60,14 @@ from APIs. */
 update a resource. POST requests are often used when submitting form 
 data or uploading a file. Unlike GET requests, POST requests do change 
 the server state and are not idempotent. */
+
+/* req (Request): This object represents the HTTP request and has 
+properties for the request query string, parameters, body, HTTP headers, 
+etc. Essentially, req is how you access anything INCOMING to your server, 
+such as user data in forms, JSON payloads, or parameters in the URL. */
+
+/* res (Response): This object represents the HTTP response that an 
+Express app SENDS when it receives an HTTP request. You manipulate the 
+res object to define what the response will be to the client, 
+whether it's setting headers, sending response codes, or outputting 
+response body content. */
