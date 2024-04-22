@@ -119,6 +119,10 @@ Create, Read, Update and Delete
 /deleteToursByUser -> DELETE    /users/3/tours/9
 
 - Send data as JSON (usually) 
+JSON is lightweight data interchange format used by web apis coded in any programming languages
+json is formatting - jsend status success failure or error then data object (enveloping)
 
 -Be stateless 
+All state is handled on the client. This means that each request must contain all the information
+necessary to process a certain request. The server should not have to remember previous requests.
 */
