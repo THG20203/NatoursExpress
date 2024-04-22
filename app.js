@@ -18,3 +18,13 @@ app.listen(port, () => {
  events, server requests, or delays (like timeouts). */
 
 ///// SYNCHRONOUS JAVASCRIPT 
+/* Synchronous programming in JavaScript refers to the straightforward execution
+of code in sequence. Each statement completes before the next one begins. This 
+blocking nature means that code that takes a long time to execute can block the 
+thread, making the user interface unresponsive. */
+
+///// ASYNCHRONOUS JAVASCRIPT 
+/* Asynchronous programming allows certain operations, like accessing the network, 
+reading files, or querying a database, to be executed in parallel with 
+other operations without stopping or blocking the main thread. This is 
+achieved using callbacks, promises, async/await, or other abstractions. */
