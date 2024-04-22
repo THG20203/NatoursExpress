@@ -77,3 +77,16 @@ to interact with another. When dealing with web APIs, it usually
 involves sending requests over HTTP and receiving responses. 
 For example, my Express app is a simple API that can respond to 
 HTTP GET and POST requests. */
+
+/* API - Application Programming Interface - piece of software that can be used
+by another piece of software in order to make applications talk to each other. */
+
+/* Application can be other things */
+
+/* REST 
+Representational State Transfer, is an architectural style 
+that defines a set of constraints and properties based on HTTP.
+- Seperate API into logical resources
+- Expose structured resource basedv URL's
+- Use HTTP methods (verbs)
+- Send data as JSON (usually) */
