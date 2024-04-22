@@ -47,3 +47,16 @@ thread, making the user interface unresponsive. */
 reading files, or querying a database, to be executed in parallel with 
 other operations without stopping or blocking the main thread. This is 
 achieved using callbacks, promises, async/await, or other abstractions. */
+
+//// SERVER DEFINITIONS
+/* GET: This method is used to RETRIEVE DATA from the server. It should not 
+change the state of the server and should be idempotent, meaning calling it 
+once or several times successively should have the same effect 
+(no side effects). */
+/* GET requests are often used to fetch documents, web pages, and data 
+from APIs. */
+
+/* POST: This method is used to SEND DATA to the server to create or 
+update a resource. POST requests are often used when submitting form 
+data or uploading a file. Unlike GET requests, POST requests do change 
+the server state and are not idempotent. */
