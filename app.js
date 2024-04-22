@@ -71,3 +71,9 @@ Express app SENDS when it receives an HTTP request. You manipulate the
 res object to define what the response will be to the client, 
 whether it's setting headers, sending response codes, or outputting 
 response body content. */
+
+/* API is a set of rules and specifications that allows one application 
+to interact with another. When dealing with web APIs, it usually 
+involves sending requests over HTTP and receiving responses. 
+For example, my Express app is a simple API that can respond to 
+HTTP GET and POST requests. */
