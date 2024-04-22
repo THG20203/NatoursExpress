@@ -16,6 +16,11 @@ app.get('/', (req, res) => {
     .json({ message: 'Hello from the server side!', app: 'Natours' });
 });
 
+/* route for post method */
+app.post('/', (req, res) => {
+  res.send('You can post to this endpoint');
+});
+
 /* to app.listen passing in port created in variable above and a callback 
 function. This callback function will be called as soon as the server starts 
 listening */
