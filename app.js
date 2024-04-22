@@ -87,6 +87,20 @@ by another piece of software in order to make applications talk to each other. *
 Representational State Transfer, is an architectural style 
 that defines a set of constraints and properties based on HTTP.
 - Seperate API into logical resources
-- Expose structured resource basedv URL's
+resources are objects or representation of something, which
+data associated to it. Any information that can be named can be
+a resource. 
+
+- Expose structured resource based URL's
+example of this:
+https://www.natours.com/addNewTour
+-> all of it is URL
+-> addNewTour bit is the endpoint 
+
+Endpoints should contain only resources (nouns), and use HTTP 
+methods for actions.
+
 - Use HTTP methods (verbs)
+
+
 - Send data as JSON (usually) */
