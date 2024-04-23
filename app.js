@@ -48,17 +48,25 @@ app.get('/api/v1/tours', (req, res) => {
 /* Responding to URL parameters */
 /* :id -> creating a variable like this */
 app.get('/api/v1/tours/:id', (req, res) => {
+  /* need to convert id to a number using * 1 */
+  const id = req.params.id * 1;
+
+  /* check if id is larger than tours array, if larger send back a 404 - no 
+  tour for given id */
+  /* if (id > tours.length) { */
+  if (!tour) {
+    return res.status(404).json({
+      status: 'fail',
+      message: 'Invalid ID',
+    });
+  }
+
   /* find() on arrays -> pass callback function. Loop through array,
   in each of the iterations we'll have access to current element and we 
   will return true or false in each of the iterations */
-
-  /* need to convert id to a number using * 1 */
-  const id = req.params.id * 1;
   /* find method will then do is it'll create an array that only contains 
   the element where el.id === id is true (id is equal to the
   one we get from the parameter */
-  /* check if id is larger than tours array, if larger send back a 404 - no 
-  tour for given id */
   const tour = tours.find((el) => el.id === id);
 
   res.status(200).json({
