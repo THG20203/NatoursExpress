@@ -108,3 +108,19 @@ letting the framework handle the complexities of routing and server responses.*/
 Postman is a powerful software tool primarily used for testing APIs (Application Programming 
 Interfaces). It provides a user-friendly graphical interface to send requests to web servers 
 and view the responses.
+
+MIDDLEWARE AND REQUEST AND RESPONSE CYCLE
+
+req, res cycle - starts when express app receives a request when someone hits our server. 
+it'll then create a req and res object
+that data will then be used and processed in order to generate and send back a response
+
+to process data - express uses middleware - to manipulate request or response object
+
+everything is moddleware - even routes. all middleware we use in app is the middleware stack
+defined by order in code
+
+next() function we have access to - just like req and res object - to mark end of middleware,
+then next middleware in stack will be executed
+
+last middleware function = route function 
