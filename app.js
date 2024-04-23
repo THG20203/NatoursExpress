@@ -48,6 +48,10 @@ app.get('/api/v1/tours', (req, res) => {
 /* Responding to URL parameters */
 /* :id -> creating a varialbe like this */
 app.get('/api/v1/tours/:id', (req, res) => {
+  /* find() on arrays -> pass callback function. Loop through array,
+  in each of the iterations we'll have access to current element  */
+  const tour = tours.find();
+
   res.status(200).json({
     status: 'success',
   });

@@ -96,8 +96,15 @@ All state is handled on the client. This means that each request must contain al
 necessary to process a certain request. The server should not have to remember previous requests.
 */
 
-/* POSTMAN
+/* No calling of function in Express.js
+So, in your case, app.post() configures the route and associates it with a callback function. 
+This function is automatically called by Express when a POST request to /api/v1/tours is detected. 
+There's no need for an explicit call like post() after defining the route because the 
+registration of the callback with app.post() is all that's needed to set up the route 
+handling within the Express application. This model keeps your code clean and focused, 
+letting the framework handle the complexities of routing and server responses.*/
 
+/* POSTMAN
 Postman is a powerful software tool primarily used for testing APIs (Application Programming 
 Interfaces). It provides a user-friendly graphical interface to send requests to web servers 
 and view the responses.
