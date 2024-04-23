@@ -31,7 +31,7 @@ const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
 );
 
-/* get request - retrieve data from server */
+/* get route - retrieve data from server */
 app.get('/api/v1/tours', (req, res) => {
   /* when someone hits route, send back all the tours. tours is the resource */
   res.status(200).json({
@@ -45,7 +45,7 @@ app.get('/api/v1/tours', (req, res) => {
   });
 });
 
-/* post method - this is the request we now want to handle. As spoke about
+/* post route - this is the request we now want to handle. As spoke about
 in rest api lecture, url is exactly the same - no matter if we want to get all the tours
 or if we want to create a new tour. url is the same - only thing that changes is the http
 method. */
@@ -54,13 +54,35 @@ app.post('/api/v1/tours', (req, res) => {
   /* post request can send data from the client to the server, and this data = ideally 
   available on the request. req object holds all the data / information about the request that 
   was done */
-  console.log(req.body);
-  /* need to send back response - finish req res cycle */
-  res.send('Done');
+  /* want to create newId on the end, so get length of tour using length - 1 then ->
+  do + 1 to add it onto end. */
+  const newId = tours[tours.length - 1].id + 1;
+  /* could have done req.body.id = newId but didn't want to mutate the body object */
+  const newTour = Object.assign({ id: newId }, req.body);
+  /* tours is array of 9 tours we have at this point, push new tour into it */
+  tours.push(newTour);
+
+  /* persist it into the file? We are in callback function that'll run in the event loop
+  and we can never block event loop so don't use synchronous one. */
+  fs.writeFile(
+    /* overwriting the file below */
+    `${__dirname}/dev-data/data/tours-simple.json`,
+    /* data we want to overwrite is tours - remember stringify this object */
+    JSON.stringify(tours),
+    /* callback function with write file just has error */
+    (err) => {
+      /* send newly created object as response. status code of 201 - means created */
+      res.status(201).json({
+        status: 'success',
+        data: {
+          tour: newTour,
+        },
+      });
+    }
+  );
 });
 
 const port = 3000;
-
 /* to app.listen passing in port created in variable above and a callback 
 function. This callback function will be called as soon as the server starts 
 listening */
