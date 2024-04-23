@@ -1,8 +1,13 @@
 const fs = require('fs');
 const express = require('express');
 const app = express();
-
+/* express.json returns a function - then added to middle stack. */
 app.use(express.json());
+
+/* next has to be third argument to the function */
+app.use((req, res, next) => {
+
+});
 
 const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
