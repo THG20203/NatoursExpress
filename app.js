@@ -54,6 +54,9 @@ app.post('/api/v1/tours', (req, res) => {
   /* post request can send data from the client to the server, and this data = ideally 
   available on the request. req object holds all the data / information about the request that 
   was done */
+  console.log(req.body);
+  /* need to send back response - finish req res cycle */
+  res.send('Done');
 });
 
 const port = 3000;
