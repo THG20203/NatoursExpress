@@ -45,6 +45,14 @@ app.get('/api/v1/tours', (req, res) => {
   });
 });
 
+/* Responding to URL parameters */
+/* :id -> creating a varialbe like this */
+app.get('/api/v1/tours/:id', (req, res) => {
+  res.status(200).json({
+    status: 'success',
+  });
+});
+
 /* post route - this is the request we now want to handle. As spoke about
 in rest api lecture, url is exactly the same - no matter if we want to get all the tours
 or if we want to create a new tour. url is the same - only thing that changes is the http

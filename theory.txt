@@ -95,3 +95,9 @@ json is formatting - jsend status success failure or error then data object (env
 All state is handled on the client. This means that each request must contain all the information
 necessary to process a certain request. The server should not have to remember previous requests.
 */
+
+/* POSTMAN
+
+Postman is a powerful software tool primarily used for testing APIs (Application Programming 
+Interfaces). It provides a user-friendly graphical interface to send requests to web servers 
+and view the responses.
