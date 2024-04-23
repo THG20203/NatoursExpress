@@ -4,6 +4,10 @@ variable below. */
 const express = require('express');
 const app = express();
 
+/* express.json is middleware - middelware can modify the incoming request data.
+middleware is between req and res. step the request goes through whilst being processed. */
+app.use(express.json());
+
 /* Define routes. First define route url. Callback function after /
 this callback needs request and response */
 /* Node is about requests and responses. */
@@ -39,6 +43,17 @@ app.get('/api/v1/tours', (req, res) => {
       tours,
     },
   });
+});
+
+/* post method - this is the request we now want to handle. As spoke about
+in rest api lecture, url is exactly the same - no matter if we want to get all the tours
+or if we want to create a new tour. url is the same - only thing that changes is the http
+method. */
+/* get to get all the tours, post to create a new tour */
+app.post('/api/v1/tours', (req, res) => {
+  /* post request can send data from the client to the server, and this data = ideally 
+  available on the request. req object holds all the data / information about the request that 
+  was done */
 });
 
 const port = 3000;
