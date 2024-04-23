@@ -27,12 +27,13 @@ const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
 );
 
+/* get request - retrieve data from server */
 app.get('/api/v1/tours', (req, res) => {
   /* when someone hits route, send back all the tours. tours is the resource */
   res.status(200).json({
     /* JSend formatting standard for what to send back */
     status: 'success',
-    /* sending results cause its an array with multiple objects */
+    /* gettings results results cause its an array with multiple objects */
     results: tours.length,
     data: {
       tours,
