@@ -32,6 +32,8 @@ app.get('/api/v1/tours', (req, res) => {
   res.status(200).json({
     /* JSend formatting standard for what to send back */
     status: 'success',
+    /* sending results cause its an array with multiple objects */
+    results: tours.length,
     data: {
       tours,
     },
