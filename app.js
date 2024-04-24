@@ -122,7 +122,8 @@ app
   .delete(deleteTour);
 
 /* new users route */
-app.route('/api/v1/users').get(getAllUsers);
+app.route('/api/v1/users').get(getAllUsers).post(createUser);
+app.route('/api/v1/users:id').get(getUser).patch(updateUser).delete(deleteUser);
 
 const port = 3001;
 app.listen(port, () => {
