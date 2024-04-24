@@ -29,3 +29,11 @@ just like with json - BSON - data will have fields and be stored in key value pa
 
 mongo - can have multiple values in one field unlike traditional relational databases.
 
+embedding - including related data into a single document. Quicker access and easier data
+models. 
+
+opposite to embedding is normalising - not possible to embed in relational databases
+datas can be related by joining with references to id fields
+
+bson max size 16mb 
+each document has an automatically generated unique id. 
