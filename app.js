@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
     /* when request happened? */
     /* newDate is right now, then date function toISOSTring convert to readable string */
-    res.requestTime = new Date().toISOString;
+    req.requestTime = new Date().toISOString();
     next();
 })
 
@@ -26,8 +26,10 @@ const tours = JSON.parse(
 );
 
 const getAllTours = (req, res) => {
+    console.log(req.requestTime);
   res.status(200).json({
     status: 'success',
+    requestedAt: req.requestTime,
     results: tours.length,
     data: {
       tours,
