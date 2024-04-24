@@ -4,10 +4,22 @@ const app = express();
 /* express.json returns a function - then added to middle stack. */
 app.use(express.json());
 
+/* First middelware function */
 /* next has to be third argument to the function */
 app.use((req, res, next) => {
-
+    /* so we have something that means we know the middleware is working */
+    console.log("Hello form middleware");
+    /* call next function so next part of req, res cycle = triggered */
+    next();
 });
+
+/* Second middleware function */
+app.use((req, res, next) => {
+    /* when request happened? */
+    /* newDate is right now, then date function toISOSTring convert to readable string */
+    res.requestTime = new Date().toISOString;
+    next();
+})
 
 const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
