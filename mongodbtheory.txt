@@ -20,3 +20,12 @@ number and type of field
 duplication etc.
 - free and open source published under the SSPL License 
 
+document structure - BSON - data format MongoDB uses for data storage. Like JSON, but 
+typed so mongoDB documents are typed.
+
+typed means all data values will have a type such as string, boolean, date etc.
+
+just like with json - BSON - data will have fields and be stored in key value pairs.
+
+mongo - can have multiple values in one field unlike traditional relational databases.
+
