@@ -1,0 +1,8 @@
+- mongodb = database - nosql database
+- more traditional database = relational
+- mongo - each database can contain 1 or more collections (tables)
+- each collection can contain one or more data structures - documents (rows)
+- each document contains information about one single entity, for example 
+one blog post, one review, one user etc
+- collection is like the parents structure containing all the documents
+- document has a data format that looks a lot like json. 

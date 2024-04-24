@@ -3,13 +3,13 @@ const express = require('express');
 const morgan = require('morgan');
 
 const app = express();
-/* express.json returns a function - then added to middle stack. */
-app.use(express.json());
-
 /* First middleware - morgan */
 /* in morgan function can specify how we want the login to look like, going to 
 use dev */
 app.use(morgan('dev'));
+
+/* express.json returns a function - then added to middle stack. */
+app.use(express.json());
 
 /* First CUSTOM middleware function */
 /* next has to be third argument to the function */
@@ -120,6 +120,9 @@ app
   .get(getTour)
   .patch(updateTour)
   .delete(deleteTour);
+
+/* new users route */
+app.route('/api/v1/users').get(getAllUsers);
 
 const port = 3001;
 app.listen(port, () => {
