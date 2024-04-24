@@ -1,32 +1,39 @@
 const fs = require('fs');
 const express = require('express');
+const morgan = require('morgan');
+
 const app = express();
 /* express.json returns a function - then added to middle stack. */
 app.use(express.json());
 
-/* First middelware function */
+/* First middleware - morgan */
+/* in morgan function can specify how we want the login to look like, going to 
+use dev */
+app.use(morgan('dev'));
+
+/* First CUSTOM middleware function */
 /* next has to be third argument to the function */
 app.use((req, res, next) => {
-    /* so we have something that means we know the middleware is working */
-    console.log("Hello form middleware");
-    /* call next function so next part of req, res cycle = triggered */
-    next();
+  /* so we have something that means we know the middleware is working */
+  console.log('Hello form middleware');
+  /* call next function so next part of req, res cycle = triggered */
+  next();
 });
 
-/* Second middleware function */
+/* Second CUSTOM middleware function */
 app.use((req, res, next) => {
-    /* when request happened? */
-    /* newDate is right now, then date function toISOSTring convert to readable string */
-    req.requestTime = new Date().toISOString();
-    next();
-})
+  /* when request happened? */
+  /* newDate is right now, then date function toISOSTring convert to readable string */
+  req.requestTime = new Date().toISOString();
+  next();
+});
 
 const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
 );
 
 const getAllTours = (req, res) => {
-    console.log(req.requestTime);
+  console.log(req.requestTime);
   res.status(200).json({
     status: 'success',
     requestedAt: req.requestTime,
@@ -107,8 +114,12 @@ const deleteTour = (req, res) => {
 // app.patch('/api/v1/tours/:id', updateTour);
 // app.delete('/api/v1/tours/:id', deleteTour);
 
-app.route("/api/v1/tours").get(getAllTours).post(createTour);
-app.route("/api/v1/tours/:id").get(getTour).patch(updateTour).delete(deleteTour);
+app.route('/api/v1/tours').get(getAllTours).post(createTour);
+app
+  .route('/api/v1/tours/:id')
+  .get(getTour)
+  .patch(updateTour)
+  .delete(deleteTour);
 
 const port = 3001;
 app.listen(port, () => {
