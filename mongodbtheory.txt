@@ -6,3 +6,17 @@
 one blog post, one review, one user etc
 - collection is like the parents structure containing all the documents
 - document has a data format that looks a lot like json. 
+
+MongoBD = document database with the scalibility and flexibility
+that you want with the querying and indexing you need
+
+MongoDB:
+- document based - stores data in document (field value pair data structures, NoSQL)
+- scalable - very easy to distribute data across multiple machines as your users 
+and amount of data grows
+- flexible - no document data schema required, so each document can have different 
+number and type of field
+- performant - embedded data models, indexing, sharding, flexible documents, native 
+duplication etc.
+- free and open source published under the SSPL License 
+
