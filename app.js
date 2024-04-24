@@ -145,6 +145,7 @@ const deleteUser = (req, res) => {
   });
 };
 
+/* tour routes */
 app.route('/api/v1/tours').get(getAllTours).post(createTour);
 app
   .route('/api/v1/tours/:id')
