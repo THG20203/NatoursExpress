@@ -145,9 +145,11 @@ const deleteUser = (req, res) => {
   });
 };
 
+// ROUTES
+const tourRouter = express.Router();
 /* tour routes */
-app.route('/api/v1/tours').get(getAllTours).post(createTour);
-app
+tourRouter.route('/api/v1/tours').get(getAllTours).post(createTour);
+tourRouter
   .route('/api/v1/tours/:id')
   .get(getTour)
   .patch(updateTour)
