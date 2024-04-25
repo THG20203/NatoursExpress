@@ -145,13 +145,8 @@ const deleteUser = (req, res) => {
   });
 };
 
-const tourRouter = express.Router();
 const userRouter = express.Router();
-/* tour routes */
-/* below only want route / cause we're in the router anyway */
-tourRouter.route('/').get(getAllTours).post(createTour);
-/* below only want id  cause we're in the router anyway */
-tourRouter.route('/:id').get(getTour).patch(updateTour).delete(deleteTour);
+
 /* new users route */
 app.route('/').get(getAllUsers).post(createUser);
 app.route('/:id').get(getUser).patch(updateUser).delete(deleteUser);
