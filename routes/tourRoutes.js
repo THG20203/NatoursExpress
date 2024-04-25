@@ -1,10 +1,10 @@
 /* need to import the express module */
 const express = require('express');
+const fs = require('fs');
 
 const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
 );
-const userRouter = require('./routes/userRoutes');
 
 /* All functions needed to be in tour router file for now */
 const getAllTours = (req, res) => {
